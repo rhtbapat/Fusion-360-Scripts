@@ -53,8 +53,8 @@ def run(context):
                 dlgResult = fileDlg.showSave()
                 if dlgResult == adsk.core.DialogResults.DialogOK:   
                     file = open(fileDlg.filename,'w+')
-                    for i in range(0,design.allParameters.count):
-                        param = design.allParameters.item(i)
+                    for i in range(0,design.userParameters.count):
+                        param = design.userParameters.item(i)
                         file.write(str(param.name)+' , '+ str(param.expression)+' , '+ str(param.unit) + ' , ' + str(param.comment) + os.linesep)
                     file.close()
         else:
